@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import TodoItem from '../TodoItem'
 import Footer from '../Footer'
+import Sidebar from '../Sidebar'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/filters'
 import style from './style.css'
 
@@ -65,14 +66,33 @@ class MainSection extends Component {
     }, 0)
 
     return (
-      <section className={style.main}>
-        {this.renderToggleAll(completedCount)}
-        <ul className={style.normal}>
-          {filteredTodos.map(todo =>
-            <TodoItem key={todo.id} todo={todo} {...actions} />
-          )}
-        </ul>
-        {this.renderFooter(completedCount)}
+      <section className="content-page current" data-route="/" data-title="Dashboard" id="dashboard">
+        <div className="col-xs-10 wrapper">
+          <div className="row">
+            <div className="col-xs-12 content-header">
+              <h1 className="pull-left">Sample Section</h1>
+            </div>
+          </div>
+          <div className="widget-title title-with-nav-bars">
+            <ul className="nav nav-tabs">
+              <li className="active">
+                <a aria-expanded="true" className="script-button" data-toggle="tab" href="#"><span className="tab-title">Sub Section</span></a>
+              </li>
+              <li>
+                <a className="script-button" data-toggle="tab" href="#"><span className="tab-title">Sub Section</span></a>
+              </li>
+              <li>
+                <a className="script-button" data-toggle="tab" href="#"><span className="tab-title">Sub Section</span></a>
+              </li>
+              <li>
+                <a className="script-button" data-toggle="tab" href="#"><span className="tab-title">Sub Section</span></a>
+              </li>
+            </ul>
+          </div>
+          <div id="sample-content">
+            Content goes here.
+          </div>
+        </div>
       </section>
     )
   }
