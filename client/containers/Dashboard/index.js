@@ -5,18 +5,21 @@ import { connect } from 'react-redux'
 import Header from '../../components/Header'
 import Sidebar from '../../components/Sidebar'
 import MainSection from '../../components/MainSection'
-import * as TodoActions from '../../actions/todos'
 
 class Dashboard extends Component {
   render() {
     const { todos, actions } = this.props
     return (
       <span>
-        <Header addTodo={actions.addTodo} />
+        <Header />
         <div className="container">
           <div className="row">
             <Sidebar currentRoute={"/"} />
-            <MainSection todos={todos} actions={actions} />
+            <div className="col-xs-10 wrapper">
+              <div id="content">
+                <MainSection />
+              </div>
+            </div>
           </div>
         </div>
       </span>
@@ -26,13 +29,11 @@ class Dashboard extends Component {
 
 function mapStateToProps(state) {
   return {
-    todos: state.todos
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(TodoActions, dispatch)
   }
 }
 
