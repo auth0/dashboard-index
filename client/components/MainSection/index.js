@@ -68,7 +68,10 @@ class MainSection extends Component {
               <div className="last-logins widget-box">
                 <h5>Recent logins</h5>
                 <div className="widget-content">
-                  <p>There are no logins for your connections yet</p>
+                  <p>
+                    <span>There are no logins for your connections yet</span>
+                    <a href="#" className="try-now">Try now</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -77,7 +80,17 @@ class MainSection extends Component {
               <div className="last-signups widget-box">
                 <h5>New users</h5>
                 <div className="widget-content">
-                  <p>There are no logins for your connections yet</p>
+                  <ul className="user-list">
+                    <li>
+                      <a href="#/users/YXV0aDB8NTYxZWIyYzFhMjY5NjE5ZTU0YjIwN2Vm">
+                        <time title="Wed Oct 14 2015 16:53:37 GMT-0300">6 months ago</time>
+                        <img className="avatar" src='https://secure.gravatar.com/avatar/bba106eccbfdfb10e88b78595228b62e?s=480&amp;r=pg&amp;d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fri.png'/>
+                        <span className="username">Ricky Rauch</span>
+                        <span className="user-list-connection">Username-Password-Authentication</span>
+                        <span className="user-list-location hide">Buenos Aires, Argentina</span>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
