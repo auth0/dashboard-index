@@ -14,9 +14,9 @@
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <link rel="stylesheet" href="css/map.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.auth0.com/styles/zocial.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.auth0.com/manage/v0.3.973/css/index.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.auth0.com/manage/v0.3.1426/css/index.min.css">
+    <link rel="stylesheet" type="text/css" href="file:///Users/benjaminflores/Auth0/dashboard-index/html/css/style.css">
     <script type="text/javascript" async="" src="https://api.intercom.io/api/js/library.js"></script>
     <script type="text/javascript" async="" src="https://widget.intercom.io/widget/5543b80da436916e2d7fb2a94b5cd014b92f6b86"></script>
     <script src="js/modernizr.custom.js"></script>
@@ -25,182 +25,235 @@
 </head>
 
 <body>
-  <header class="dashboard-header" style="background-color: #fbfbfb">
-        <nav role="navigation" class="navbar navbar-default">
-          <div class="container">
-            <div class="navbar-header">
-              <h1 class="navbar-brand">
-                <a href="http://manage.auth0.com/"><span>Auth0</span></a>
-              </h1>
-            </div>
-
-            <div id="navbar-collapse" class="collapse navbar-collapse">
-
-
-              <ul class="nav hide navbar-nav navbar-left">
-                <li class="li-why"><a href="/why-auth0">Why Auth0</a></li>
-                <li class="li-how"><a href="/how-it-works">How It Works</a></li>
-                <li class="li-pricing"><a href="/pricing">Pricing</a></li>
-              </ul>
-
-              <ul class="nav navbar-nav navbar-right">
-                <li><a class="upgrade-account" href="/#/account/billing/subscription"><i class="icon-budicon-466"></i> Link</a></li>
-                <li><a target="_blank" href="https://auth0.com/support">Link</a></li>
-                <li><a target="_blank" href="https://auth0.com/docs">Link</a></li>
-                <li class="dropdown">
-                  <span role="button" data-toggle="dropdown" data-target="#" class="btn-dro btn-username">
-
-                    <img src="https://secure.gravatar.com/avatar/a12075a065d2c41ac447dcffc1398d43?s=480&amp;r=pg&amp;d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fro.png" class="picture avatar">
-
-                    <span class="username-text truncate">Username</span>
-                    <i class="icon-budicon-460"></i>
-                  </span>
-
-                  <ul role="menu" aria-labelledby="dLabel" class="dropdown-menu animated">
-
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#/account">Account settings</a></li>
-
-                    <li role="presentation" class="divider"></li>
-
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="new_account">New Account</a></li>
-
-
-                    <li role="presentation" class="divider"></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout">Logout</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-  <div class="container">
-    <div class="row">
-      <div id="sidebar" class="col-xs-2" style="">
-          <a href="#" class="visible-phone hide"><i class="icon icon-budicon-497"></i>Dashboard</a>
-          <div class="sidebar-fixed">
-            <ul>
-              <li><a href="#/"><i class="icon icon-budicon-497"></i> <span>Sample Section</span></a></li>
-
-                <li class="active"><a href="#/reports"><i class="icon icon-budicon-279"></i> <span>Sample Section</span></a></li>
-              <li><a href="#/applications"><i class="icon icon-budicon-375"></i> <span>Sample Section</span></a></li>
-              <li><a href="#/externalapps"><i class="icon icon-budicon-143"></i> <span>Sample Section</span></a></li>
-              <li class="connections-tab submenu">
-                <a href="#"><i class="icon icon-budicon-339"></i> <span>Sample Section</span></a>
-                <span class="featuring-badge animated bounce">New</span>
-
-                <ul style="display: none;">
-
-                  <li>
-                    <a href="#/connections/database"><i class="icon icon-budicon-519"></i><span>Sample Section</span></a>
-                  </li>
-                  <li>
-                    <a href="#/connections/social"><i class="icon icon-budicon-519"></i><span>Sample Section</span></a>
-                  </li>
-                  <li>
-                    <a href="#/connections/enterprise"><i class="icon icon-budicon-519"></i><span>Sample Section</span></a>
-                  </li>
-                  <li>
-                    <a href="#/connections/passwordless"><i class="icon icon-budicon-519"></i><span>Sample Section</span></a>
-                  </li>
-
-                </ul>
-              </li>
-              <li>
-                <a href="#/users" style="">
-                  <i class="icon icon-budicon-292"></i> <span style="">Sample Section</span>
-                  <!-- <span class="users-count label">0</span> -->
-                </a>
-              </li>
-
-              <li><a href="#/rules"><i class="icon icon-budicon-173"></i> <span>Sample Section</span></a></li>
-              <li><a href="#/multifactor"><i class="icon icon-budicon-243"></i> <span>Sample Section</span></a></li>
-              <li><a href="#/login_page"><i class="icon icon-budicon-725"></i> <span>Sample Section</span></a></li>
-
-              <li class="submenu">
-                <a href="#"><i class="icon icon-budicon-778"></i> <span>Sample Section</span></a>
-                <ul style="display: none;">
-                  <li>
-                    <a href="#/emails"><i class="icon icon-budicon-519"></i><span>Sample Section</span></a>
-                  </li>
-                  <li>
-                    <a href="#/emails/provider"><i class="icon icon-budicon-519"></i><span>Sample Section</span></a>
-                  </li>
-                </ul>
-              </li>
-
-
-
-              <li><a href="#/logs"><i class="icon icon-budicon-754"></i> <span>Sample Section</span></a></li>
-
-
-              <!-- <li style="">
-                <a href="javascript:openSendFeedback()" target="_blank"><i class="icon icon-budicon-803"></i> Send Feedback</a>
-              </li> -->
-            </ul>
-
-            <div class="sidebar-footer-links"></div>
-          </div>
-          <!-- .sidebar-fixed -->
+  <header class="dashboard-header">
+    <nav role="navigation" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <h1 class="navbar-brand">
+            <a href="/"><span>Auth0</span></a>
+          </h1>
         </div>
 
-    <section id="dashboard" data-route="/" data-title="Dashboard " class="content-page current">
-  <div class="col-xs-10 wrapper">
+        <div id="navbar-collapse" class="collapse navbar-collapse">
+          <ul class="nav hide navbar-nav navbar-left">
+            <li class="li-why"><a href="/why-auth0">Why Auth0</a></li>
+            <li class="li-how"><a href="/how-it-works">How It Works</a></li>
+            <li class="li-pricing"><a href="/pricing">Pricing</a></li>
+          </ul>
+
+          <div class="main-search search-input">
+            <i class="icon-budicon-489"></i>
+            <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;"><input class="form-control js-predictive tt-hint" type="text" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(246, 246, 246);"><input class="form-control js-predictive tt-input" type="text" placeholder="Search for apps or features" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: avenir-next-web, 'Avenir Next', 'Helvetica Neue', Hevetica, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 500; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: geometricPrecision; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-apps"></div><div class="tt-dataset-features"></div></span></span>
+          </div>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="upgrade-account hide" href="/#/account/billing/subscription"><i class="icon-budicon-466"></i> Upgrade account</a></li>
+            <li>
+              <a class="notifications-toggle has-critical-notifications" href="#">
+                <img src="https://manage.auth0.com/img/notifications-icon.svg" alt="Notifications bell" class="notifications-icon">
+              </a>
+            </li>
+            <li><a target="_blank" href="https://support.auth0.com">Help &amp; Support</a></li>
+            <li><a target="_blank" href="https://auth0.com/docs">Documentation</a></li>
 
 
-	<div class="row">
+            <li class="dropdown" data-delay="{&quot;show&quot;: 1000, &quot;hide&quot;: 100}" data-toggle="tooltip" data-placement="left" title="" data-original-title="elbenja">
+              <span role="button" data-toggle="dropdown" data-target="#" class="btn-dro btn-username">
+                <img class="picture avatar" src="https://lh3.googleusercontent.com/-9udL3U1-x-k/AAAAAAAAAAI/AAAAAAAAAAo/1HB4HiGGoPg/photo.jpg" onerror="this.onerror = null; this.src = 'https://cdn.auth0.com/avatars/bf.png'">
+                <span class="username-text truncate">elbenja</span>
+                <i class="icon-budicon-460"></i>
+              </span>
 
-		<div class="col-xs-12 content-header">
+              <ul role="menu" aria-labelledby="dLabel" class="dropdown-menu animated">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#/account">Account settings</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation" class="dropdown-header">US West Accounts</li>
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" class="truncate" title="benelifloauth0" href="/switch?tenant=benelifloauth0&amp;region=default&amp;next=%23%2F">
+                    benelifloauth0
+                  </a>
+                </li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="new_account">New Account</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
+  <div class="container root-container">
+    <div class="row">
+      <div id="sidebar" class="col-xs-2">
+        <a href="#" class="visible-phone hide"><i class="icon icon-budicon-497"></i>Dashboard</a>
+        <div class="sidebar-fixed">
+          <ul>
+            <li class="active"><a href="#/"><i class="icon icon-budicon-497"></i> <span>Dashboard</span></a></li>
+            <li><a href="#/applications"><i class="icon icon-budicon-375"></i> <span>Applications</span></a></li>
+            <li><a href="#/externalapps"><i class="icon icon-budicon-143"></i> <span>SSO Integrations</span></a></li>
+            <li class="connections-tab submenu">
+              <a href="#"><i class="icon icon-budicon-339"></i> <span>Connections</span></a>
+              <span class="featuring-badge animated bounce">New</span>
 
-			<h1 class="pull-left">Sample Section</h1>
+              <ul style="display: none;">
+                <li>
+                  <a href="#/connections/database"><i class="icon icon-budicon-519"></i><span>Database</span></a>
+                </li>
+                <li>
+                  <a href="#/connections/social"><i class="icon icon-budicon-519"></i><span>Social</span></a>
+                </li>
+                <li>
+                  <a href="#/connections/enterprise"><i class="icon icon-budicon-519"></i><span>Enterprise</span></a>
+                </li>
+                <li>
+                  <a href="#/connections/passwordless"><i class="icon icon-budicon-519"></i><span>Passwordless</span></a>
+                </li>
 
+              </ul>
+            </li>
+            <li>
+              <a href="#/users" style="">
+                <i class="icon icon-budicon-292"></i> <span style="">Users</span>
+                <!-- <span class="users-count label">0</span> -->
+              </a>
+            </li>
+
+            <li><a href="#/rules"><i class="icon icon-budicon-173"></i> <span>Rules</span></a></li>
+            <li class="hide"><a href="#/cron"><i class="icon icon-budicon-622"></i> <span>Scheduled jobs</span></a></li>
+            <li><a href="#/multifactor"><i class="icon icon-budicon-243"></i> <span>Multifactor Auth</span></a></li>
+            <li><a href="#/login_page"><i class="icon icon-budicon-725"></i> <span>Login Page</span></a></li>
+
+            <li class="submenu">
+              <a href="#"><i class="icon icon-budicon-778"></i> <span>Emails</span></a>
+              <ul style="display: none;">
+                <li>
+                  <a href="#/emails"><i class="icon icon-budicon-519"></i><span>Templates</span></a>
+                </li>
+                <li>
+                  <a href="#/emails/provider"><i class="icon icon-budicon-519"></i><span>Provider</span></a>
+                </li>
+              </ul>
+            </li>
+
+            <li><a href="#/logs"><i class="icon icon-budicon-754"></i> <span>Logs</span></a></li>
+
+            <li><a href="#/anomaly"><i class="icon icon-budicon-528"></i> <span>Anomaly Detection</span></a></li>
+
+            <li>
+              <a href="#/extensions">
+                <i class="icon icon-budicon-324"></i>
+                <span>Extensions</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="js-zendesk-button" target="_blank" href="https://support.auth0.com"><i class="icon icon-budicon-803"></i> Get Support</a>
+            </li>
+          </ul>
+
+          <div class="sidebar-footer-links"></div>
+        </div>
+        <!-- .sidebar-fixed -->
+      </div>
+
+      <div class="col-xs-10 wrapper">
+
+        <div id="content">
+
+          <section id="dashboard" data-route="/" data-title="Dashboard " class="content-page current">
+
+            <div class="row">
+
+              <div class="col-xs-12 content-header">
+                <h1 class="pull-left">Dashboard</h1>
+              </div>
+
+            </div>
+            <!-- .row -->
+
+            <div class="row chart">
+              <div class="col-xs-12">
+                <h5>Logins and Signups along the week</h5>
+              </div>
+
+            </div>
+            <!-- .row -->
+
+            <div class="row">
+              <!-- Stat Boxes widget -->
+              <div class="client-stat-boxes col-xs-12 loaded">
+                <div class="widget-content row row-stats">
+                  <div class="stat-box stat-box-users asdasd">
+                    <span>Users</span>
+                    <strong>0</strong>
+                    <small>All Time</small>
+                  </div>
+
+                  <div class="stat-box stat-box-active-users">
+                    <span>Active Users</span>
+                    <strong>0</strong>
+                    <small>Last 30 days</small>
+                  </div>
+
+                  <div class="stat-box stat-box-logins">
+                    <span>Logins</span>
+                    <strong>0</strong>
+                    <small>Last 7 days</small>
+                  </div>
+
+                  <div class="stat-box stat-box-signups">
+                    <span>New Signups</span>
+                    <strong>0</strong>
+                    <small>Last 7 days</small>
+                  </div>
+
+                  <div class="stat-box stat-box-suspicious">
+                    <span>Suspicious</span>
+                    <strong>0</strong>
+                    <small>Last 7 days</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12 col-widgets">
+
+                <div class="col-user-list col-user-last-logins">
+                  <div class="last-logins widget-box">
+                    <h5>Recent logins</h5>
+
+                    <div class="widget-content">
+                      <p>There are no logins for your connections yet</p>
+                    </div>
+                    <!-- <p><a href="#/users" class="btn btn-block">View More</a></p> -->
+
+                  </div>
+                </div>
+
+                <div class="col-user-list col-user-last-signup">
+                  <!-- Last Signups widget -->
+                  <div class="last-signups widget-box">
+                    <h5>New users</h5>
+
+                    <div class="widget-content">
+                      <p>There are no logins for your connections yet</p>
+                    </div>
+
+                    <!-- <p><a href="#/users" class="btn btn-block">View More</a></p> -->
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
-	</div>
-
-	<!-- .row -->
-  <div class="widget-title title-with-nav-bars">
-    <ul class="nav nav-tabs">
-        <li class="active">
-          <a class="script-button" data-toggle="tab" href="#" aria-expanded="true">
-            <span class="tab-title">Sub Section</span>
-          </a>
-        </li>
-
-        <li>
-          <a class="script-button" data-toggle="tab" href="#">
-            <span class="tab-title">Sub Section</span>
-          </a>
-        </li>
-
-        <li>
-          <a class="script-button" data-toggle="tab" href="#">
-            <span class="tab-title">Sub Section</span>
-          </a>
-        </li>
-
-        <li>
-          <a class="script-button" data-toggle="tab" href="#">
-            <span class="tab-title">Sub Section</span>
-          </a>
-        </li>
-
-
-
-      </ul>
-
   </div>
 
-	<!-- .widget -->
-  <div id="sample-content" >
-    Content goes here.
-  </div>
-
-
-
-</section>
-</div>
-
-  </div>
 </body>
 </html>
