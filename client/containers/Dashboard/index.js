@@ -6,7 +6,6 @@ import Header from '../../components/Header'
 import Sidebar from '../../components/Sidebar'
 import MainSection from '../../components/MainSection'
 import * as TodoActions from '../../actions/todos'
-import style from './style.css'
 
 class Dashboard extends Component {
   render() {

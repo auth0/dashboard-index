@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react'
-import TodoTextInput from '../TodoTextInput'
 
 class Header extends Component {
 

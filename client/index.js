@@ -18,5 +18,5 @@ ReactDOM.render(
       </Route>
     </Router>
   </Provider>,
-  document.getElementById('rarara')
+  document.getElementById('root')
 )
