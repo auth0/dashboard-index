@@ -11,6 +11,8 @@ import configure from './store'
 const store = configure()
 const history = syncHistoryWithStore(browserHistory, store)
 
+require('css!./index.css');
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>

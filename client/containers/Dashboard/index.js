@@ -15,7 +15,11 @@ class Dashboard extends Component {
         <div className="container">
           <div className="row">
             <Sidebar currentRoute={"/"} />
-            <MainSection />
+            <div className="col-xs-10 wrapper">
+              <div id="content">
+                <MainSection />
+              </div>
+            </div>
           </div>
         </div>
       </span>
@@ -25,13 +29,11 @@ class Dashboard extends Component {
 
 function mapStateToProps(state) {
   return {
-    todos: state.todos
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(TodoActions, dispatch)
   }
 }
 

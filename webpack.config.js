@@ -27,6 +27,14 @@ module.exports = {
         loader: 'file?name=[name].[ext]'
       },
       {
+        test: /client\/index\.css$/,
+        loader: 'file?name=[name].[ext]'
+      },
+      {
+        test: /client\/index\.css$/,
+        loaders: ['style-loader', 'css-loader', 'postcss-loader']
+      },
+      {
         test: /\.css$/,
         include: /client/,
         loaders: [
