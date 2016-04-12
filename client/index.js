@@ -7,11 +7,11 @@ import React from 'react'
 
 import Dashboard from './containers/Dashboard'
 import configure from './store'
+import styles from './index.styl'
 
 const store = configure()
 const history = syncHistoryWithStore(browserHistory, store)
 
-require('css!./index.css');
 
 ReactDOM.render(
   <Provider store={store}>

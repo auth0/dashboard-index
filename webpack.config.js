@@ -27,21 +27,9 @@ module.exports = {
         loader: 'file?name=[name].[ext]'
       },
       {
-        test: /client\/index\.css$/,
-        loader: 'file?name=[name].[ext]'
-      },
-      {
-        test: /client\/index\.css$/,
-        loaders: ['style-loader', 'css-loader', 'postcss-loader']
-      },
-      {
-        test: /\.css$/,
+        test: /\.styl$/,
         include: /client/,
-        loaders: [
-          'style-loader',
-          'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'postcss-loader'
-        ]
+        loader: 'style-loader!css-loader!stylus-loader'
       },
       {
         test: /\.css$/,
