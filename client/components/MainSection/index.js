@@ -10,14 +10,15 @@ class MainSection extends Component {
   }
 
   render() {
+    const fetchComplete = this.props.fetchComplete;
     const signinUsers = this.props.signinUsers;
     const signupUsers = this.props.signupUsers;
-    const fullOnboarding = !signupUsers.length ? 'full-onboarding' : '';
-    const shouldOnboarding = fullOnboarding
+    const fullOnboarding = fetchComplete && !signupUsers.length ? 'full-onboarding' : '';
+    const shouldOnboarding = fetchComplete && fullOnboarding
       ? <OnBoarding />
       : <div className="onboarding-content"><OnBoarding /></div>
 
-    const shouldAnalytics = !fullOnboarding
+    const shouldAnalytics = fetchComplete && !fullOnboarding
       ? <DashboardAnalytics
             stats={this.props.stats}
             lastSigninUsers={signinUsers}

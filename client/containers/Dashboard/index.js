@@ -10,7 +10,7 @@ import moment from 'moment'
 class Dashboard extends Component {
   constructor(props, context) {
     super(props, context)
-    this.state = {stats: [], signupUsers: [], signinUsers: []}
+    this.state = {stats: [], signupUsers: [], signinUsers: [], fetch_complete: false }
   }
 
   componentDidMount() {
@@ -23,7 +23,8 @@ class Dashboard extends Component {
     const stats = this.state.stats.reverse();
     const signupUsers = this.state.signupUsers;
     const signinUsers = this.state.signinUsers;
-    const staticOnboarding = signupUsers.length ? 'static-onboarding' : ''
+    const fetch_complete = this.state.fetch_complete;
+    const staticOnboarding = (fetch_complete && signupUsers.length) ? 'static-onboarding' : ''
 
     return (
       <article className={`${staticOnboarding}`}>
@@ -35,6 +36,7 @@ class Dashboard extends Component {
               <div id="content">
                 <MainSection
                   stats={stats}
+                  fetchComplete={fetch_complete}
                   signupUsers={signupUsers}
                   signinUsers={signinUsers}
                 />
@@ -119,7 +121,7 @@ class Dashboard extends Component {
       }
     })
     .then((response) => response.json())
-    .then((signupUsers) => this.setState({ signupUsers }))
+    .then((signupUsers) => this.setState({ signupUsers, fetch_complete: true }))
   }
 }
 
