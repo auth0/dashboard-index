@@ -11,6 +11,21 @@ class MainSection extends Component {
   render() {
     return (
       <section className="content-page current" data-route="/" data-title="Dashboard" id="dashboard">
+
+        <div id="onboarding">
+          <header>
+            <figure>
+            </figure>
+          </header>
+
+          <div className="progress-bar">
+            <div className="progress-loader"></div>
+          </div>
+
+          <div className="steps-content">
+          </div>
+        </div>
+
         <div className="row">
           <div className="col-xs-12 content-header">
             <h1 className="pull-left">Dashboard</h1>
@@ -83,11 +98,16 @@ class MainSection extends Component {
                   <ul className="user-list">
                     <li>
                       <a href="#/users/YXV0aDB8NTYxZWIyYzFhMjY5NjE5ZTU0YjIwN2Vm">
-                        <time title="Wed Oct 14 2015 16:53:37 GMT-0300">6 months ago</time>
-                        <img className="avatar" src='https://secure.gravatar.com/avatar/bba106eccbfdfb10e88b78595228b62e?s=480&amp;r=pg&amp;d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fri.png'/>
-                        <span className="username">Ricky Rauch</span>
-                        <span className="user-list-connection">Username-Password-Authentication</span>
-                        <span className="user-list-location hide">Buenos Aires, Argentina</span>
+                        <figure>
+                          <img className="avatar" src='https://secure.gravatar.com/avatar/bba106eccbfdfb10e88b78595228b62e?s=480&amp;r=pg&amp;d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fri.png'/>
+                          <span className="social-login twitter"></span>
+                        </figure>
+                        <div className="description-content">
+                          <time title="Wed Oct 14 2015 16:53:37 GMT-0300">6 months ago</time>
+                          <span className="username">Ricky Rauch</span>
+                          <span className="user-list-connection">Username-Password-Authentication</span>
+                          <span className="user-list-location hide">Buenos Aires, Argentina</span>
+                        </div>
                       </a>
                     </li>
                   </ul>
