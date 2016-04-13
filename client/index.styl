@@ -42,9 +42,6 @@ canvas{
     border-radius: 100px;
     margin-right: 4px;
 
-
-
-
 #dashboard .chart h5 {
   font-size: 14px;
   font-weight: 600;
@@ -180,6 +177,9 @@ canvas{
   margin-top: 12px;
 }
 
+#dashboard #onboarding
+  display none
+
 #onboarding
   width 805px
   box-shadow 0 0 30px 0 rgba(black,.1)
@@ -283,7 +283,7 @@ canvas{
         span
           display block
           padding-left 45px
-          margin-top 3px
+          padding-top 3px
 
       &.checked
         h3
@@ -315,4 +315,58 @@ canvas{
     footer
       text-align center
       padding 25px 0
+
+#root.with-onboarding
+  margin-right 300px
+
+  header.dashboard-header
+    margin-right 300px
+
+  .onboarding-content
+    position fixed
+    width 300px
+    height 100vh
+    right 0
+    top 0
+    z-index 1001
+    overflow auto
+    box-shadow 0 0 30px 0 rgba(black,.1)
+
+  #onboarding
+    width 100%
+    display block
+
+    header
+      padding 30px 0
+
+      figure
+        width 50px
+        height 50px
+        top 0
+
+      h2
+        margin-top 15px
+        font-size 20px
+
+      p
+        font-size 13px
+        padding 0 15px
+
+    .progress-content
+      padding 15px
+
+    .steps-content
+      .step-container
+        padding 15px
+
+        h3
+          font-size 14px
+
+          span
+            padding-top 6px
+
+        .step-info
+          p, a
+            font-size 12px
+
 
