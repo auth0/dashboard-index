@@ -6,20 +6,24 @@ import Header from '../../components/Header'
 import Sidebar from '../../components/Sidebar'
 import MainSection from '../../components/MainSection'
 import {AUTH0_API_TOKEN, AUTH0_DOMAIN, AUTH0_API_URL} from '../../constants/env'
-
+import moment from 'moment'
 class Dashboard extends Component {
   constructor(props, context) {
     super(props, context)
-    this.state = {stats: {}, users: {}}
+    this.state = {stats: [], signupUsers: [], signinUsers: []}
   }
 
   componentDidMount() {
-    this.fetchUsers()
     this.fetchStats()
+    this.fetchSignupUsers()
+    this.fetchSigninUsers()
   }
 
   render() {
-    const staticOnboarding = false ? 'static-onboarding' : ''
+    const stats = this.state.stats.reverse();
+    const signupUsers = this.state.signupUsers;
+    const signinUsers = this.state.signinUsers;
+    const staticOnboarding = signupUsers.length ? 'static-onboarding' : ''
 
     return (
       <article className={`${staticOnboarding}`}>
@@ -30,8 +34,9 @@ class Dashboard extends Component {
             <div className="col-xs-10 wrapper">
               <div id="content">
                 <MainSection
-                  stats={this.state.stats}
-                  users={this.state.users}
+                  stats={stats}
+                  signupUsers={signupUsers}
+                  signinUsers={signinUsers}
                 />
               </div>
             </div>
@@ -41,23 +46,24 @@ class Dashboard extends Component {
     )
   }
 
-  fetchUsers() {
-    const api_url = AUTH0_API_URL.replace('{tenant_domain}', AUTH0_DOMAIN)
-
-    fetch(`${api_url}/stats/daily`, {
-      headers: {
-        'Accept': 'application/json',
-        'Authorization': `Bearer ${AUTH0_API_TOKEN}`
-      }
-    })
-    .then((response) => response.json())
-    .then((users) => this.setState({ users }))
-  }
-
   fetchStats() {
-    const api_url = AUTH0_API_URL.replace('{tenant_domain}', AUTH0_DOMAIN)
+    const dateTo = moment().format('YYYYMMDD');
+    const dateFrom = moment().subtract(7,'days').format('YYYYMMDD');
 
-    fetch(`${api_url}/users`, {
+    const api_url = AUTH0_API_URL.replace('{tenant_domain}', AUTH0_DOMAIN)
+    const url = new URL(`${api_url}/stats/daily`)
+    // const get_query = {
+    //   from: dateFrom,
+    //   to: dateTo
+    // }
+
+    // var search = Object
+    //   .keys(get_query)
+    //   .map(key => `${key}=${get_query[key]}`)
+
+    // url.search = search.join('&')
+
+    fetch(url, {
       headers: {
         'Accept': 'application/json',
         'Authorization': `Bearer ${AUTH0_API_TOKEN}`
@@ -65,6 +71,55 @@ class Dashboard extends Component {
     })
     .then((response) => response.json())
     .then((stats) => this.setState({ stats }))
+  }
+
+  fetchSigninUsers() {
+    const api_url = AUTH0_API_URL.replace('{tenant_domain}', AUTH0_DOMAIN)
+    const url = new URL(`${api_url}/users`)
+    const get_query = {
+      search_engine: 'v2',
+      sort: 'last_login:-1',
+      q: '_exists_:last_login'
+    }
+
+    var search = Object
+      .keys(get_query)
+      .map(key => `${key}=${get_query[key]}`)
+
+    url.search = search.join('&')
+
+    fetch(url, {
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${AUTH0_API_TOKEN}`
+      }
+    })
+    .then((response) => response.json())
+    .then((signinUsers) => this.setState({ signinUsers }))
+  }
+
+  fetchSignupUsers() {
+    const api_url = AUTH0_API_URL.replace('{tenant_domain}', AUTH0_DOMAIN)
+    const url = new URL(`${api_url}/users`)
+    const get_query = {
+      search_engine: 'v2',
+      sort: 'created_at:-1'
+    }
+
+    var search = Object
+      .keys(get_query)
+      .map(key => `${key}=${get_query[key]}`)
+
+    url.search = search.join('&')
+
+    fetch(url, {
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${AUTH0_API_TOKEN}`
+      }
+    })
+    .then((response) => response.json())
+    .then((signupUsers) => this.setState({ signupUsers }))
   }
 }
 

@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 import { Line as LineChart } from 'react-chartjs'
+import moment from 'moment'
+
+const lineChartOptions = {
+  responsive: true,
+  height: 300
+}
 
 class DashboardAnalytics extends Component {
-  constructor () {
-    super()
+  constructor (props, context) {
+    super(props, context)
   }
 
   render () {
-    const lineChartData = this.props.lineChartData
-    const lineChartOptions = this.props.lineChartOptions
+    const lineChartData = this.getLineChartData(this.props.stats)
 
     return (
       <div className="dashboard-analytics">
@@ -77,10 +82,41 @@ class DashboardAnalytics extends Component {
               <div className="last-logins widget-box">
                 <h5>Recent logins</h5>
                 <div className="widget-content">
-                  <p>
-                    <span>There are no logins for your connections yet</span>
-                    <a href="#" className="try-now">Try now</a>
-                  </p>
+                  {
+                    (function renderLastLogins() {
+                      if (!this.props.lastSigninUsers.length) {
+                        return (
+                          <p>
+                            <span>There are no logins for your connections yet</span>
+                            <a href="#" className="try-now">Try now</a>
+                          </p>
+                        )
+                      }
+
+                      return (
+                        <ul className="user-list">
+                          {this.props.lastSigninUsers.map(function (user) {
+                            const connection = user.identities.length ? user.identities[0].connection : ''
+                            return <li key={user.user_id}>
+                              <a href={`#/users/${user.user_id}`}>
+                                <figure>
+                                  <img className="avatar" src={user.picture} />
+                                  <span className={`social-login ${connection}`}></span>
+                                </figure>
+                                <div className="description-content">
+                                  <time title={moment(user.last_login)}>{moment(user.last_login).fromNow()}</time>
+                                  <span className="username">{user.username || user.email || user.nickname}</span>
+                                  <span className="user-list-connection">{connection}</span>
+                                  <span className="user-list-location hide">Buenos Aires, Argentina</span>
+                                </div>
+                              </a>
+                            </li>
+                          })}
+                        </ul>
+                      )
+                    }).bind(this)()
+                  }
+
                 </div>
               </div>
             </div>
@@ -90,20 +126,23 @@ class DashboardAnalytics extends Component {
                 <h5>New users</h5>
                 <div className="widget-content">
                   <ul className="user-list">
-                    <li>
-                      <a href="#/users/YXV0aDB8NTYxZWIyYzFhMjY5NjE5ZTU0YjIwN2Vm">
-                        <figure>
-                          <img className="avatar" src='https://secure.gravatar.com/avatar/bba106eccbfdfb10e88b78595228b62e?s=480&amp;r=pg&amp;d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fri.png'/>
-                          <span className="social-login twitter"></span>
-                        </figure>
-                        <div className="description-content">
-                          <time title="Wed Oct 14 2015 16:53:37 GMT-0300">6 months ago</time>
-                          <span className="username">Ricky Rauch</span>
-                          <span className="user-list-connection">Username-Password-Authentication</span>
-                          <span className="user-list-location hide">Buenos Aires, Argentina</span>
-                        </div>
-                      </a>
-                    </li>
+                    {this.props.lastSignupUsers.map(function (user) {
+                      const connection = user.identities.length ? user.identities[0].connection : ''
+                      return <li key={user.user_id}>
+                        <a href={`#/users/${user.user_id}`}>
+                          <figure>
+                            <img className="avatar" src={user.picture} />
+                            <span className={`social-login ${connection}`}></span>
+                          </figure>
+                          <div className="description-content">
+                            <time title={moment(user.created_at)}>{moment(user.created_at).fromNow()}</time>
+                            <span className="username">{user.username || user.email || user.nickname}</span>
+                            <span className="user-list-connection">{connection}</span>
+                            <span className="user-list-location hide">Buenos Aires, Argentina</span>
+                          </div>
+                        </a>
+                      </li>
+                    })}
                   </ul>
                 </div>
               </div>
@@ -114,6 +153,50 @@ class DashboardAnalytics extends Component {
       </div>
     )
   }
+
+  parseStats (stats = []) {
+    return lineChartData
+  }
+
+  getLineChartData(stats = []) {
+    return {
+      labels: this.resolveLabels(stats),
+      datasets: [
+        this.getLoginsDataset(stats),
+        this.getSignupsDataset(stats)
+      ]
+    }
+  }
+  resolveLabels(stats = []) {
+    return stats.map((stat) => moment(stat.date).format('dddd'))
+  }
+
+  getLoginsDataset (stats) {
+    return {
+      label: "Logins",
+      fillColor: "rgba(255, 154, 87, .1)",
+      strokeColor: "rgba(255, 154, 87, 1)",
+      pointColor: "rgba(255, 154, 87, 1)",
+      pointStrokeColor: "rgba(255, 154, 87, 1)",
+      pointHighlightFill: "rgba(255, 154, 87, 1)",
+      pointHighlightStroke: "rgba(220,220,220,1)",
+      data: stats.map((stat) => stat.logins)
+    }
+  }
+
+  getSignupsDataset (stats) {
+    return {
+      label: "Signups",
+      fillColor: "rgba(1, 180, 143, .1)",
+      strokeColor: "rgba(1, 180, 143, 1)",
+      pointColor: "rgba(1, 180, 143, 1)",
+      pointStrokeColor: "rgba(1, 180, 143, 1)",
+      pointHighlightFill: "rgba(1, 180, 143, 1)",
+      pointHighlightStroke: "rgba(151,187,205,1)",
+      data: stats.map((stat) => stat.signups)
+    }
+  }
+
 }
 
 export default DashboardAnalytics

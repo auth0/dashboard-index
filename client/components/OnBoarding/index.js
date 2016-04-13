@@ -2,8 +2,8 @@
 import React, { Component } from 'react'
 
 class OnBoarding extends Component {
-  constructor() {
-    super()
+  constructor(props, context) {
+    super(props, context)
   }
 
   render() {
