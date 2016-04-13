@@ -69,6 +69,10 @@ class MainSection extends Component {
             <div className="chart-container">
               <h5>Logins and Signups along the week</h5>
               <LineChart data={this.state.lineChartData} options={this.state.lineChartOptions} height="100" />
+              <div className="chart-items">
+                <div className="chart-item"><i></i> Signups</div>
+                <div className="chart-item"><i></i> Logins</div>
+              </div>
             </div>
           </div>
 
