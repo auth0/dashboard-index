@@ -1,11 +1,39 @@
 
 import React, { Component } from 'react'
-import Sidebar from '../Sidebar'
 
+import {Line as LineChart} from 'react-chartjs'
 
 class MainSection extends Component {
   constructor(props, context) {
     super(props, context)
+    this.state = {
+      lineChartData: {
+        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        datasets: [
+          {
+            label: "Logins",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [65, 59, 80, 81, 56, 55, 40]
+          },
+          {
+            label: "Signups",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: [28, 48, 40, 19, 86, 27, 90]
+          }
+        ]
+      },
+      lineChartOptions: {}
+    }
   }
 
   render() {
@@ -21,6 +49,7 @@ class MainSection extends Component {
         <div className="row chart">
           <div className="col-xs-12">
             <h5>Logins and Signups along the week</h5>
+            <LineChart data={this.state.lineChartData} options={this.state.lineChartOptions} />
           </div>
 
         </div>

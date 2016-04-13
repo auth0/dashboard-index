@@ -5,8 +5,13 @@ import { connect } from 'react-redux'
 import Header from '../../components/Header'
 import Sidebar from '../../components/Sidebar'
 import MainSection from '../../components/MainSection'
+import LineChart from 'react-chartjs'
 
 class Dashboard extends Component {
+  componentDidMount() {
+
+  }
+
   render() {
     const { todos, actions } = this.props
     return (
