@@ -59,6 +59,7 @@ class MainSection extends Component {
 
         <div className="row">
           <div className="col-xs-12 content-header">
+            <a href="/#/applications/create" className="btn btn-success pull-right new"><i className="icon-budicon-473"></i>New Application</a>
             <h1 className="pull-left">Dashboard</h1>
           </div>
 
