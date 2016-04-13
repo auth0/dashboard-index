@@ -44,25 +44,25 @@ class DashboardAnalytics extends Component {
             <div className="widget-content row row-stats">
               <div className="stat-box stat-box-users asdasd">
                 <span>Users</span>
-                <strong>0</strong>
+                <strong>{this.props.lastSignupUsers.length}</strong>
                 <small>All Time</small>
               </div>
 
               <div className="stat-box stat-box-active-users">
                 <span>Active Users</span>
-                <strong>0</strong>
+                <strong>{this.props.lastSigninUsers.length}</strong>
                 <small>Last 30 days</small>
               </div>
 
               <div className="stat-box stat-box-logins">
                 <span>Logins</span>
-                <strong>0</strong>
+                <strong>{this.props.lastSigninUsers.length}</strong>
                 <small>Last 7 days</small>
               </div>
 
               <div className="stat-box stat-box-signups">
                 <span>New Signups</span>
-                <strong>0</strong>
+                <strong>{this.props.lastSignupUsers.length}</strong>
                 <small>Last 7 days</small>
               </div>
 
