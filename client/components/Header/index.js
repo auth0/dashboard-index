@@ -5,7 +5,7 @@ class Header extends Component {
 
   render() {
     return (
-      <header className="dashboard-header" style={{backgroundColor: '#fbfbfb'}}>
+      <header className="dashboard-header">
         <nav role="navigation" className="navbar navbar-default">
           <div className="container">
             <div className="navbar-header">

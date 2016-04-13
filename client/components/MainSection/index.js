@@ -12,28 +12,29 @@ class MainSection extends Component {
         datasets: [
           {
             label: "Logins",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
+            fillColor: "rgba(255, 154, 87, .1)",
+            strokeColor: "rgba(255, 154, 87, 1)",
+            pointColor: "rgba(255, 154, 87, 1)",
+            pointStrokeColor: "rgba(255, 154, 87, 1)",
+            pointHighlightFill: "rgba(255, 154, 87, 1)",
             pointHighlightStroke: "rgba(220,220,220,1)",
             data: [65, 59, 80, 81, 56, 55, 40]
           },
           {
             label: "Signups",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
+            fillColor: "rgba(1, 180, 143, .1)",
+            strokeColor: "rgba(1, 180, 143, 1)",
+            pointColor: "rgba(1, 180, 143, 1)",
+            pointStrokeColor: "rgba(1, 180, 143, 1)",
+            pointHighlightFill: "rgba(1, 180, 143, 1)",
             pointHighlightStroke: "rgba(151,187,205,1)",
             data: [28, 48, 40, 19, 86, 27, 90]
           }
         ]
       },
       lineChartOptions: {
-        responsive: true
+        responsive: true,
+        height: 300
       }
     }
   }
@@ -65,8 +66,10 @@ class MainSection extends Component {
 
         <div className="row chart">
           <div className="col-xs-12">
-            <h5>Logins and Signups along the week</h5>
-            <LineChart data={this.state.lineChartData} options={this.state.lineChartOptions} />
+            <div className="chart-container">
+              <h5>Logins and Signups along the week</h5>
+              <LineChart data={this.state.lineChartData} options={this.state.lineChartOptions} height="100" />
+            </div>
           </div>
 
         </div>
