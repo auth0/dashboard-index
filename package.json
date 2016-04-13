@@ -41,6 +41,7 @@
     "webpack-hot-middleware": "^2.7.1"
   },
   "dependencies": {
+    "babel-polyfill": "6.7.4",
     "chart.js": "1.1.1",
     "d3-line": "1.0.0",
     "react-chartjs": "0.7.3",

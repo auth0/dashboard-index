@@ -1,22 +1,57 @@
 // infowindow
+header.dashboard-header
+  background: rgba(255,255,255,.4);
+  backdrop-filter: blur(5px);
+
+#sidebar a i
+  width: 20px;
 
 .info-wrap{
   background-color: #333;
   float: left;
 }
 
-#dashboard .chart {
-  background: #f9f9f9;
-  padding: 20px 0;
+#dashboard .chart .chart-container{
+  background: lighten(#e3e5e7, 60%);
+  padding: 20px;
   border-radius: 3px;
+  overflow: hidden;
 }
 
+canvas{
+  font-family: "Avenir Next";
+}
+
+.chart-items
+  text-align: center;
+  margin-top: 30px;
+
+  .chart-item
+    display: inline-block;
+
+    &:first-child
+      margin-right: 40px;
+      i
+        background: #01B48F;
+
+  i
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    background: #FF9A57;
+    border-radius: 100px;
+    margin-right: 4px;
+
+
+
+
 #dashboard .chart h5 {
-  font-size: 13px;
-  font-weight: 400;
-  color: rgba(0,0,0,0.7);
-  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.86);
+  margin: 0 0 20px 0;
   padding: 0;
+  letter-spacing: 0;
   border: none;
   text-align: center;
   text-transform: none;
@@ -149,6 +184,8 @@
   width 805px
   box-shadow 0 0 30px 0 rgba(black,.1)
 
+  display none
+
   header
     background #2B2B33
     text-align center
@@ -258,12 +295,22 @@
 
       .step-info
         padding 0 46px
+        max-height 0
+        overflow hidden
+
+        -webkit-transition .28s ease-in-out
+        transition .28s ease-in-out
 
         p
-          margin 15px 0
+          padding 15px 0
+          margin 0
 
         a
           font-size 16px
+
+      &:hover
+        .step-info
+          max-height 200px
 
     footer
       text-align center

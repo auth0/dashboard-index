@@ -5,7 +5,7 @@ class Header extends Component {
 
   render() {
     return (
-      <header className="dashboard-header" style={{backgroundColor: '#fbfbfb'}}>
+      <header className="dashboard-header">
         <nav role="navigation" className="navbar navbar-default">
           <div className="container">
             <div className="navbar-header">
@@ -34,7 +34,7 @@ class Header extends Component {
 
                   <img src="https://secure.gravatar.com/avatar/a12075a065d2c41ac447dcffc1398d43?s=480&amp;r=pg&amp;d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fro.png" className="picture avatar" />
 
-                  <span className="username-text truncate">auth0</span>
+                  <span className="username-text truncate">dashboard-index</span>
                     <i className="icon-budicon-460"></i>
                   </span>
 

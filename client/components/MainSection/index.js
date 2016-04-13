@@ -12,28 +12,29 @@ class MainSection extends Component {
         datasets: [
           {
             label: "Logins",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
+            fillColor: "rgba(255, 154, 87, .1)",
+            strokeColor: "rgba(255, 154, 87, 1)",
+            pointColor: "rgba(255, 154, 87, 1)",
+            pointStrokeColor: "rgba(255, 154, 87, 1)",
+            pointHighlightFill: "rgba(255, 154, 87, 1)",
             pointHighlightStroke: "rgba(220,220,220,1)",
             data: [65, 59, 80, 81, 56, 55, 40]
           },
           {
             label: "Signups",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
+            fillColor: "rgba(1, 180, 143, .1)",
+            strokeColor: "rgba(1, 180, 143, 1)",
+            pointColor: "rgba(1, 180, 143, 1)",
+            pointStrokeColor: "rgba(1, 180, 143, 1)",
+            pointHighlightFill: "rgba(1, 180, 143, 1)",
             pointHighlightStroke: "rgba(151,187,205,1)",
             data: [28, 48, 40, 19, 86, 27, 90]
           }
         ]
       },
       lineChartOptions: {
-        responsive: true
+        responsive: true,
+        height: 300
       }
     }
   }
@@ -83,6 +84,10 @@ class MainSection extends Component {
                 <i className="check-circle"></i>
                 <span>Create your first user</span>
               </h3>
+              <div className="step-info">
+                <p>Lock will allow you to quickly get your login box flow working, without coding!. Login, signup, forgot password, password policity and more.</p>
+                <a href="#">Start now</a>
+              </div>
             </div>
 
             <div className="step-container">
@@ -90,6 +95,10 @@ class MainSection extends Component {
                 <i className="check-circle"></i>
                 <span>Change your Social Connections</span>
               </h3>
+              <div className="step-info">
+                <p>Lock will allow you to quickly get your login box flow working, without coding!. Login, signup, forgot password, password policity and more.</p>
+                <a href="#">Start now</a>
+              </div>
             </div>
 
             <div className="step-container">
@@ -97,6 +106,10 @@ class MainSection extends Component {
                 <i className="check-circle"></i>
                 <span>Edit one user profile</span>
               </h3>
+              <div className="step-info">
+                <p>Lock will allow you to quickly get your login box flow working, without coding!. Login, signup, forgot password, password policity and more.</p>
+                <a href="#">Start now</a>
+              </div>
             </div>
 
             <div className="step-container">
@@ -104,6 +117,10 @@ class MainSection extends Component {
                 <i className="check-circle"></i>
                 <span>Change your email settings</span>
               </h3>
+              <div className="step-info">
+                <p>Lock will allow you to quickly get your login box flow working, without coding!. Login, signup, forgot password, password policity and more.</p>
+                <a href="#">Start now</a>
+              </div>
             </div>
 
             <div className="step-container">
@@ -111,6 +128,10 @@ class MainSection extends Component {
                 <i className="check-circle"></i>
                 <span>Create a rule</span>
               </h3>
+              <div className="step-info">
+                <p>Lock will allow you to quickly get your login box flow working, without coding!. Login, signup, forgot password, password policity and more.</p>
+                <a href="#">Start now</a>
+              </div>
             </div>
 
             <div className="step-container">
@@ -118,6 +139,10 @@ class MainSection extends Component {
                 <i className="check-circle"></i>
                 <span>Setup a third party app</span>
               </h3>
+              <div className="step-info">
+                <p>Lock will allow you to quickly get your login box flow working, without coding!. Login, signup, forgot password, password policity and more.</p>
+                <a href="#">Start now</a>
+              </div>
             </div>
 
             <footer>
@@ -128,6 +153,7 @@ class MainSection extends Component {
 
         <div className="row">
           <div className="col-xs-12 content-header">
+            <a href="/#/applications/create" className="btn btn-success pull-right new"><i className="icon-budicon-473"></i>New Application</a>
             <h1 className="pull-left">Dashboard</h1>
           </div>
 
@@ -135,8 +161,14 @@ class MainSection extends Component {
 
         <div className="row chart">
           <div className="col-xs-12">
-            <h5>Logins and Signups along the week</h5>
-            <LineChart data={this.state.lineChartData} options={this.state.lineChartOptions} />
+            <div className="chart-container">
+              <h5>Logins and Signups along the week</h5>
+              <LineChart data={this.state.lineChartData} options={this.state.lineChartOptions} height="100" />
+              <div className="chart-items">
+                <div className="chart-item"><i></i> Signups</div>
+                <div className="chart-item"><i></i> Logins</div>
+              </div>
+            </div>
           </div>
 
         </div>

@@ -5,11 +5,24 @@ import { connect } from 'react-redux'
 import Header from '../../components/Header'
 import Sidebar from '../../components/Sidebar'
 import MainSection from '../../components/MainSection'
-import LineChart from 'react-chartjs'
+import {AUTH0_API_TOKEN, AUTH0_DOMAIN, AUTH0_API_URL} from '../../constants/env'
 
 class Dashboard extends Component {
+  constructor() {
+    super()
+    this.stats = {}
+  }
   componentDidMount() {
+    const api_url = AUTH0_API_URL.replace('{tenant_domain}', AUTH0_DOMAIN)
 
+    fetch(`${api_url}/stats/daily`, {
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${AUTH0_API_TOKEN}`
+      }
+    })
+    .then((response) => response.json())
+    .then((stats) => console.log(stats))
   }
 
   render() {
@@ -34,6 +47,7 @@ class Dashboard extends Component {
 
 function mapStateToProps(state) {
   return {
+    // lineChartData: this.parseData(this.state.data)
   }
 }
 
