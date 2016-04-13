@@ -1,0 +1,4 @@
+
+export const AUTH0_API_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJBVmFPU0VPbHNqcVFlSGdmNVY2d2JaQWpTRzFsaGpmTSIsInNjb3BlcyI6eyJ1c2VycyI6eyJhY3Rpb25zIjpbInJlYWQiXX0sInN0YXRzIjp7ImFjdGlvbnMiOlsicmVhZCJdfSwibG9ncyI6eyJhY3Rpb25zIjpbInJlYWQiXX19LCJpYXQiOjE0NjA1MTc0NjksImp0aSI6ImE0YmYzNWI2YmMyZWExYzhjMjAxMmM3NDA3ZWNhMDcxIn0.kviNS7-732972__csXhJxIjuueBo-ke3eqvLMFrg5rQ'
+export const AUTH0_DOMAIN = 'dashboard-index.auth0.com'
+export const AUTH0_API_URL = 'https://{tenant_domain}/api/v2'

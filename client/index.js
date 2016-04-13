@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 
 import { Router, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
