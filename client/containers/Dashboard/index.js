@@ -19,8 +19,10 @@ class Dashboard extends Component {
   }
 
   render() {
+    const staticOnboarding = false ? 'static-onboarding' : ''
+
     return (
-      <article>
+      <article className={`${staticOnboarding}`}>
         <Header />
         <div className="container">
           <div className="row">
