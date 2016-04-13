@@ -81,7 +81,6 @@
 }
 
 #dashboard .col-widgets .widget-content .try-now {
-  color: #33B6E3;
   margin-top: 10px;
   display: inline-block;
 }
@@ -145,3 +144,128 @@
   color: #5D676F;
   margin-top: 12px;
 }
+
+#onboarding
+  width 805px
+  box-shadow 0 0 30px 0 rgba(black,.1)
+
+  header
+    background #2B2B33
+    text-align center
+    padding-bottom 30px
+
+    figure
+      width 105px
+      height 105px
+      border-radius 100%
+      overflow hidden
+      display block
+      margin 0 auto
+      position relative
+      top -20px
+      box-shadow 0 0 10px 0 rgba(black,.2)
+
+    h2
+      font-size 26px
+      color white
+      margin 0
+
+    p
+      max-width 375px
+      font-size 16px
+      color rgba(white,.56)
+      margin 15px auto 0
+
+  .progress-content
+    background #222228
+    padding 20px 0
+
+    .bar
+      background white
+      width 100%
+      max-width 590px
+      height 10px
+      border-radius 10px
+      display block
+      margin 0 auto
+
+    .loader
+      background #7ED321
+      height 100%
+      border-radius 10px 0 0 10px
+      display block
+      position relative
+
+      .loader-tooltip
+        background white
+        width 50px
+        height 26px
+        font-size 14px
+        color rgba(black,.89)
+        border-radius 3px
+        display block
+        text-align center
+        padding 4px 0
+        position absolute
+        top -35px
+        right -25px
+
+        &:after
+          content ''
+          width 0
+          height 0
+          border-style solid
+          border-width 5px 6px 0 6px
+          border-color white transparent transparent transparent
+          position absolute
+          top 100%
+          left 19px
+
+  .steps-content
+    .step-container
+      border-bottom 1px solid rgba(black,.05)
+      padding 15px 60px
+
+      h3
+        height 26px
+        margin 0
+        font-size 20px
+        font-weight 400
+        color rgba(black,.89)
+        box-sizing content-box
+        cursor pointer
+
+        .check-circle
+          background-image url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMjZweCIgaGVpZ2h0PSIyNnB4IiB2aWV3Qm94PSIwIDAgMjYgMjYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+UmVjdGFuZ2xlIDI5PC90aXRsZT4gICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+ICAgIDxkZWZzPjwvZGVmcz4gICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZmlsbC1vcGFjaXR5PSIwLjIiIG9wYWNpdHk9IjAuNSI+ICAgICAgICA8ZyBpZD0iRW1wdHkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC00NjkuMDAwMDAwLCAtNDc2LjAwMDAwMCkiIGZpbGw9IiMwMDAwMDAiPiAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtMjkiIHg9IjQ2OSIgeT0iNDc2IiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHJ4PSIxMDAiPjwvcmVjdD4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==')
+          width 26px
+          height 26px
+          display block
+          float left
+          margin-right 20px
+
+        span
+          display block
+          padding-left 45px
+          margin-top 3px
+
+      &.checked
+        h3
+          color rgba(black,.26)
+          pointer-events none
+
+          .check-circle
+            background-image url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMjZweCIgaGVpZ2h0PSIyNnB4IiB2aWV3Qm94PSIwIDAgMjYgMjYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+R3JvdXAgNDwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz48L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9IkVtcHR5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDY5LjAwMDAwMCwgLTQxNC4wMDAwMDApIj4gICAgICAgICAgICA8ZyBpZD0iR3JvdXAtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDY5LjAwMDAwMCwgNDE0LjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlLTI5IiBmaWxsPSIjN0VEMzIxIiB4PSIwIiB5PSIwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHJ4PSIxMDAiPjwvcmVjdD4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTEwLjQ1NDU0NTUsMTYuMzA1OTcwMSBMNy4xMTM2MzYzNiwxMy4wMTQ5MjU0IEw2LDE0LjExMTk0MDMgTDEwLjQ1NDU0NTUsMTguNSBMMjAsOS4wOTcwMTQ5MyBMMTguODg2MzYzNiw4IEwxMC40NTQ1NDU1LDE2LjMwNTk3MDEgTDEwLjQ1NDU0NTUsMTYuMzA1OTcwMSBaIiBpZD0iU2hhcGUiIGZpbGw9IiNGRkZGRkYiPjwvcGF0aD4gICAgICAgICAgICA8L2c+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=')
+
+      .step-info
+        padding 0 46px
+
+        p
+          margin 15px 0
+
+        a
+          font-size 16px
+
+    footer
+      text-align center
+      padding 25px 0
+
