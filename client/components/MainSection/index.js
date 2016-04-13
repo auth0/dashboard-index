@@ -32,7 +32,9 @@ class MainSection extends Component {
           }
         ]
       },
-      lineChartOptions: {}
+      lineChartOptions: {
+        responsive: true
+      }
     }
   }
 
