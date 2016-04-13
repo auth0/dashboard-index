@@ -15,8 +15,8 @@ class MainSection extends Component {
     const signupUsers = this.props.signupUsers;
     const fullOnboarding = fetchComplete && !signupUsers.length ? 'full-onboarding' : '';
     const shouldOnboarding = fetchComplete && fullOnboarding
-      ? <OnBoarding />
-      : <div className="onboarding-content"><OnBoarding /></div>
+      ? <OnBoarding signupUsers={signupUsers} />
+      : <div className="onboarding-content"><OnBoarding signupUsers={signupUsers} /></div>
 
     const shouldAnalytics = fetchComplete && !fullOnboarding
       ? <DashboardAnalytics

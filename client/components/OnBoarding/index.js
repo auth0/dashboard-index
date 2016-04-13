@@ -7,6 +7,7 @@ class OnBoarding extends Component {
   }
 
   render() {
+    const signupUsers = this.props.signupUsers
     return (
       <div id="onboarding">
         <header>
@@ -44,7 +45,7 @@ class OnBoarding extends Component {
             </div>
           </div>
 
-          <div className="step-container">
+          <div className={`step-container ${signupUsers.length ? 'checked' : ''}`}>
             <h3>
               <i className="check-circle"></i>
               <span>Create your first user</span>
