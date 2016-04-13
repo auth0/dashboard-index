@@ -46,7 +46,7 @@ class MainSection extends Component {
     const lastSignupUsers = this.parseSignupUsers(this.props.users)
     const lastSigninUsers = this.parseSigninUsers(this.props.users)
 
-    const fullOnboarding = 'full-onboarding';
+    const fullOnboarding = false ? 'full-onboarding' : '';
     const shouldOnboarding = fullOnboarding
       ? <OnBoarding />
       : null
