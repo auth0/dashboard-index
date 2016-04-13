@@ -13,13 +13,14 @@ header.dashboard-header
 
 #dashboard .chart .chart-container{
   background: lighten(#e3e5e7, 60%);
-  padding: 20px;
+
   border-radius: 3px;
   overflow: hidden;
 }
 
 canvas{
   font-family: "Avenir Next";
+  padding: 0 20px;
 }
 
 .chart-items
@@ -52,6 +53,11 @@ canvas{
   border: none;
   text-align: center;
   text-transform: none;
+}
+
+#dashboard .chart h5, #dashboard .chart-items{
+  background: lighten(#e3e5e7, 30%);
+  padding: 20px;
 }
 
 #dashboard .row-stats span {
@@ -379,5 +385,3 @@ canvas{
 
       footer
         display none
-
-

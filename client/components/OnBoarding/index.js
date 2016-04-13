@@ -11,7 +11,7 @@ class OnBoarding extends Component {
       <div id="onboarding">
         <header>
           <figure>
-            <img src="https://lh4.googleusercontent.com/-RPVOHHBbt-8/AAAAAAAAAAI/AAAAAAAAAAA/AMW9IgcrcsVGyPyixI8l5vwB_iGS-o1bdA/s192-c-mo/photo.jpg"/>
+            <img src="https://avatars.io/twitter/beneliflo_"/>
           </figure>
           <h2>Welcome Benjamin!</h2>
           <p>In order to start using Auth0, we recommend you to check the next features to improve</p>
@@ -51,7 +51,7 @@ class OnBoarding extends Component {
             </h3>
             <div className="step-info">
               <p>Lock will allow you to quickly get your login box flow working, without coding!. Login, signup, forgot password, password policity and more.</p>
-              <a href="#">Start now</a>
+              <a href="https://manage.auth0.com/#/users" target="_blank">Start now</a>
             </div>
           </div>
 
