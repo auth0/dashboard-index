@@ -51,7 +51,7 @@ class OnBoarding extends Component {
               <span>Create your first user</span>
             </h3>
             <div className="step-info">
-              <p>Lock will allow you to quickly get your login box flow working, without coding!. Login, signup, forgot password, password policity and more.</p>
+              <p>We would like you to create your first user in Auth0. Usermanagement is super easy and allow you to create, edit, ban and edit user profiles.</p>
               <a href="https://manage.auth0.com/#/users" target="_blank">Start now</a>
             </div>
           </div>
