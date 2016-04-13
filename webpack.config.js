@@ -29,7 +29,7 @@ module.exports = {
       {
         test: /\.styl$/,
         include: /client/,
-        loader: 'style-loader!css-loader!stylus-loader'
+        loader: 'style-loader!css-loader!postcss-loader!stylus-loader'
       },
       {
         test: /\.css$/,
